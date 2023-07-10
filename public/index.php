@@ -3,13 +3,13 @@
 session_start();
 
 class App{
-    function splitURL(){
+    private function splitURL(){
         $URL = $_GET["url"] ?? "home";
         $URL = explode("/", $URL);
         return $URL;
     }
     
-    function loadController(){
+    private function loadController(){
         $URL = splitURL();
     
         $filename = "../app/controllers/" . ucfirst($URL[0]) . ".php";
@@ -20,12 +20,6 @@ class App{
             require $filename;
         }
     }    
-}
-
-function show($stuff){
-    echo "<pre>";
-    print_r($stuff);
-    echo "</pre>";
 }
 
 
