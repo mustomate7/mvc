@@ -7,8 +7,8 @@ class App{
         return $URL;
     }
     
-    private function loadController(){
-        $URL = splitURL();
+    public function loadController(){
+        $URL = $this->splitURL();
     
         $filename = "../app/controllers/" . ucfirst($URL[0]) . ".php";
         if(file_exists($filename)){
@@ -19,6 +19,3 @@ class App{
         }
     }    
 }
-
-
-loadController();
