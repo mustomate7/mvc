@@ -2,6 +2,8 @@
 
 session_start();
 
+require '../app/core/init.php';
+
 class App{
     private function splitURL(){
         $URL = $_GET["url"] ?? "home";
